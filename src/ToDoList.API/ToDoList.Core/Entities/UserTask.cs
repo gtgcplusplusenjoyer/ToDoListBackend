@@ -10,6 +10,6 @@ namespace ToDoList.Core.Entities
         public Priority Priority { get; set; } = Priority.Medium;
         public DateTime DueDate { get; set; }
         public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set;
+        public DateTime? UpdatedAt { get; set; }
     }
-}
+}}
