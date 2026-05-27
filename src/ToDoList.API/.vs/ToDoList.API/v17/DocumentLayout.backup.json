@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.Infrastructure\\Migrations\\20260527180505_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ToDoList.Infrastructure\\Migrations\\20260527180505_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AAD07605-693D-45F5-8440-BB5C6D89B1A9}|ToDoList.Core\\ToDoList.Core.csproj|c:\\users\\user\\documents\\todolist\\src\\todolist.api\\todolist.core\\entities\\usertask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AAD07605-693D-45F5-8440-BB5C6D89B1A9}|ToDoList.Core\\ToDoList.Core.csproj|solutionrelative:todolist.core\\entities\\usertask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -62,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -73,12 +77,25 @@
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20260527180505_Initial.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.Infrastructure\\Migrations\\20260527180505_Initial.cs",
+              "RelativeDocumentMoniker": "ToDoList.Infrastructure\\Migrations\\20260527180505_Initial.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.Infrastructure\\Migrations\\20260527180505_Initial.cs",
+              "RelativeToolTip": "ToDoList.Infrastructure\\Migrations\\20260527180505_Initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T18:05:05.488Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ToDoList.API.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.API\\ToDoList.API.csproj",
               "RelativeDocumentMoniker": "ToDoList.API\\ToDoList.API.csproj",
@@ -90,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AddInfrastructureExtension.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.Infrastructure\\Extensions\\AddInfrastructureExtension.cs",
               "RelativeDocumentMoniker": "ToDoList.Infrastructure\\Extensions\\AddInfrastructureExtension.cs",
@@ -102,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ToDoList.Infrastructure.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.Infrastructure\\ToDoList.Infrastructure.csproj",
               "RelativeDocumentMoniker": "ToDoList.Infrastructure\\ToDoList.Infrastructure.csproj",
@@ -114,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "UserTaskRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.Infrastructure\\Repositories\\UserTaskRepository.cs",
               "RelativeDocumentMoniker": "ToDoList.Infrastructure\\Repositories\\UserTaskRepository.cs",
@@ -126,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.API\\Program.cs",
               "RelativeDocumentMoniker": "ToDoList.API\\Program.cs",
@@ -134,17 +151,16 @@
               "RelativeToolTip": "ToDoList.API\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T15:56:34.676Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-27T15:56:34.676Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UserTask.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.Core\\Entities\\UserTask.cs",
               "RelativeDocumentMoniker": "ToDoList.Core\\Entities\\UserTask.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.Core\\Entities\\UserTask.cs*",
-              "RelativeToolTip": "ToDoList.Core\\Entities\\UserTask.cs*",
+              "ToolTip": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.Core\\Entities\\UserTask.cs",
+              "RelativeToolTip": "ToDoList.Core\\Entities\\UserTask.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAASwA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-27T16:04:43.994Z",
@@ -152,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "IUserTaskRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.Core\\Interfaces\\IUserTaskRepository.cs",
               "RelativeDocumentMoniker": "ToDoList.Core\\Interfaces\\IUserTaskRepository.cs",
@@ -164,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.API\\appsettings.Development.json",
               "RelativeDocumentMoniker": "ToDoList.API\\appsettings.Development.json",
@@ -176,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "UserTaskConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.Infrastructure\\Configuration\\UserTaskConfiguration.cs",
               "RelativeDocumentMoniker": "ToDoList.Infrastructure\\Configuration\\UserTaskConfiguration.cs",
@@ -188,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ToDoListDbContext.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.Infrastructure\\Context\\ToDoListDbContext.cs",
               "RelativeDocumentMoniker": "ToDoList.Infrastructure\\Context\\ToDoListDbContext.cs",
@@ -200,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Priority.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.Core\\Enums\\Priority.cs",
               "RelativeDocumentMoniker": "ToDoList.Core\\Enums\\Priority.cs",
@@ -212,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ToDoStatus.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.Core\\Enums\\ToDoStatus.cs",
               "RelativeDocumentMoniker": "ToDoList.Core\\Enums\\ToDoStatus.cs",
@@ -224,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\ToDoList\\src\\ToDoList.API\\ToDoList.Core\\Entities\\BaseEntity.cs",
               "RelativeDocumentMoniker": "ToDoList.Core\\Entities\\BaseEntity.cs",
