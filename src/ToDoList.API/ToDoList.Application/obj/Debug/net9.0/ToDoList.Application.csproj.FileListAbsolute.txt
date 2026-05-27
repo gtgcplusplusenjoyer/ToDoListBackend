@@ -1,0 +1,12 @@
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\bin\Debug\net9.0\ToDoList.Application.deps.json
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\bin\Debug\net9.0\ToDoList.Application.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\bin\Debug\net9.0\ToDoList.Application.pdb
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\obj\Debug\net9.0\ToDoList.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\obj\Debug\net9.0\ToDoList.Application.AssemblyInfoInputs.cache
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\obj\Debug\net9.0\ToDoList.Application.AssemblyInfo.cs
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\obj\Debug\net9.0\ToDoList.Application.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\obj\Debug\net9.0\ToDoList.Application.sourcelink.json
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\obj\Debug\net9.0\ToDoList.Application.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\obj\Debug\net9.0\refint\ToDoList.Application.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\obj\Debug\net9.0\ToDoList.Application.pdb
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\obj\Debug\net9.0\ref\ToDoList.Application.dll

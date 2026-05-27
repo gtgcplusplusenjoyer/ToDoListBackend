@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "ToDoList.Core/1.0.0": {
+        "runtime": {
+          "ToDoList.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ToDoList.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
