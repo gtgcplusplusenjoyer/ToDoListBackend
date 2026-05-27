@@ -48,9 +48,9 @@ namespace ToDoList.Application.Services
 
         public async Task<List<UserTaskResponseDto>> GetUsersAsync(CancellationToken cancellationToken)
         {
-            var tasks =await _tasks.GetAllUsersTasksAsync(cancellationToken);
+            var tasks = await _tasks.GetAllUsersTasksAsync(cancellationToken);
 
-            return tasks.Select(b=>_mapper.Map<UserTaskResponseDto>(b)).ToList();
+            return _mapper.Map<List<UserTaskResponseDto>>(tasks);
         }
 
         public async Task<UserTaskResponseDto?> GetUserTaskByIdAsync(Guid id, CancellationToken cancellationToken)

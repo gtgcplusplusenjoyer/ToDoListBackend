@@ -1,1 +1,81 @@
-[]
+[
+  {
+    "ContainingType": "ToDoList.API.Controllers.UserTaskController",
+    "Method": "CreateUserTask",
+    "RelativePath": "controller/UserTask",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createDto",
+        "Type": "ToDoList.Application.Dto.CreateUserTaskDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ToDoList.API.Controllers.UserTaskController",
+    "Method": "GetUsersTasksAsync",
+    "RelativePath": "controller/UserTask",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ToDoList.API.Controllers.UserTaskController",
+    "Method": "GetUserTaskById",
+    "RelativePath": "controller/UserTask/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ToDoList.API.Controllers.UserTaskController",
+    "Method": "DeleteUserTaskAsync",
+    "RelativePath": "controller/UserTask/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ToDoList.API.Controllers.UserTaskController",
+    "Method": "UpdateUserTaskAsync",
+    "RelativePath": "controller/UserTask/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateUserTaskDto",
+        "Type": "ToDoList.Application.Dto.UpdateUserTaskDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

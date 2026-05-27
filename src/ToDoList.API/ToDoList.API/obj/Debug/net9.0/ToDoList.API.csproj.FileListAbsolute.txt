@@ -128,3 +128,14 @@ C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\
 C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\ToDoList.Application.pdb
 C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\ToDoList.Infrastructure.pdb
 C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\ToDoList.Core.pdb
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\AutoMapper.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\obj\Debug\net9.0\ToDoList.API.MvcApplicationPartsAssemblyInfo.cs

@@ -10,3 +10,7 @@ C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\obj\Debug
 C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\obj\Debug\net9.0\refint\ToDoList.Application.dll
 C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\obj\Debug\net9.0\ToDoList.Application.pdb
 C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\obj\Debug\net9.0\ref\ToDoList.Application.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\bin\Debug\net9.0\ToDoList.Core.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\bin\Debug\net9.0\ToDoList.Core.pdb
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\obj\Debug\net9.0\ToDoList.Application.csproj.AssemblyReference.cache
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.Application\obj\Debug\net9.0\ToDoList.ED2F2C6F.Up2Date
