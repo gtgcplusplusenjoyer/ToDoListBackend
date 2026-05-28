@@ -7,7 +7,7 @@ namespace ToDoList.Infrastructure.Context
     public class ToDoListDbContext : DbContext
     {
         public DbSet<UserTask> _tasks { get; set; }
-
+        public DbSet<User> _users { get; set; }
         public ToDoListDbContext(DbContextOptions<ToDoListDbContext> options) : base(options) {}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -15,6 +15,7 @@ namespace ToDoList.Infrastructure.Context
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfiguration(new UserTaskConfiguration());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
         }
     }
 }

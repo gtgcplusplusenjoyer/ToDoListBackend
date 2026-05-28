@@ -20,13 +20,13 @@ namespace ToDoList.Infrastructure.Configuration
 
             builder.Property(e => e.Status)
                 .HasDefaultValue(ToDoStatus.Pending)
-                .HasConversion<string>()
+                .HasConversion<int>()
                 .HasMaxLength(20)
                 .IsRequired();
 
             builder.Property(t => t.Priority)
                 .HasDefaultValue(Priority.Medium)
-                .HasConversion<string>()
+                .HasConversion<int>()
                 .HasMaxLength(20)
                 .IsRequired();
 
@@ -42,6 +42,8 @@ namespace ToDoList.Infrastructure.Configuration
             builder.Property(t => t.UpdatedAt)
                 .HasColumnType("timestamp with time zone")
                 .IsRequired(false);
+
+            builder.ToTable("UserTasks");
         }
     }
 }
