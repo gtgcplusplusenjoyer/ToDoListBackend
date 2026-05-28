@@ -22,6 +22,41 @@ namespace ToDoList.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("ToDoList.Core.Entities.User", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("character varying(150)");
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("RefreshToken")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<DateTime?>("RefreshTokenExpiryTime")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.ToTable("Users", (string)null);
+                });
+
             modelBuilder.Entity("ToDoList.Core.Entities.UserTask", b =>
                 {
                     b.Property<Guid>("Id")
@@ -46,26 +81,24 @@ namespace ToDoList.Infrastructure.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
-                    b.Property<string>("Priority")
-                        .IsRequired()
+                    b.Property<int>("Priority")
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(20)
-                        .HasColumnType("character varying(20)")
-                        .HasDefaultValue("Medium");
+                        .HasColumnType("integer")
+                        .HasDefaultValue(2);
 
-                    b.Property<string>("Status")
-                        .IsRequired()
+                    b.Property<int>("Status")
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(20)
-                        .HasColumnType("character varying(20)")
-                        .HasDefaultValue("Pending");
+                        .HasColumnType("integer")
+                        .HasDefaultValue(1);
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
-                    b.ToTable("_tasks");
+                    b.ToTable("UserTasks", (string)null);
                 });
 #pragma warning restore 612, 618
         }
