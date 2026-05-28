@@ -1,4 +1,4 @@
-﻿namespace ToDoList.Core.Entities
+﻿namespace ToDoList.Core.Entities.User
 {
     public class User : BaseEntity
     {

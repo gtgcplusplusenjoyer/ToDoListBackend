@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ToDoList.Core.Entities;
+using ToDoList.Core.Entities.User;
 
 namespace ToDoList.Infrastructure.Configuration
 {

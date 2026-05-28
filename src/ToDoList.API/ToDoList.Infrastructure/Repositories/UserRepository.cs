@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
-using ToDoList.Core.Entities;
+using ToDoList.Core.Entities.User;
 using ToDoList.Core.Interfaces;
 using ToDoList.Infrastructure.Context;
 
