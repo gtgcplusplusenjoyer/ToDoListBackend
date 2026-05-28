@@ -2,7 +2,7 @@
   {
     "ContainingType": "ToDoList.API.Controllers.UserTaskController",
     "Method": "CreateUserTask",
-    "RelativePath": "controller/UserTask",
+    "RelativePath": "api/UserTask",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,17 +18,58 @@
   {
     "ContainingType": "ToDoList.API.Controllers.UserTaskController",
     "Method": "GetUsersTasksAsync",
-    "RelativePath": "controller/UserTask",
+    "RelativePath": "api/UserTask",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Priority",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "DueTime",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortDirection",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Page",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "ToDoList.API.Controllers.UserTaskController",
     "Method": "GetUserTaskById",
-    "RelativePath": "controller/UserTask/{id}",
+    "RelativePath": "api/UserTask/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -44,7 +85,7 @@
   {
     "ContainingType": "ToDoList.API.Controllers.UserTaskController",
     "Method": "DeleteUserTaskAsync",
-    "RelativePath": "controller/UserTask/{id}",
+    "RelativePath": "api/UserTask/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -60,7 +101,7 @@
   {
     "ContainingType": "ToDoList.API.Controllers.UserTaskController",
     "Method": "UpdateUserTaskAsync",
-    "RelativePath": "controller/UserTask/{id}",
+    "RelativePath": "api/UserTask/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,

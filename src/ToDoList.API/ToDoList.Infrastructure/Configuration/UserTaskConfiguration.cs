@@ -31,7 +31,7 @@ namespace ToDoList.Infrastructure.Configuration
                 .IsRequired();
 
             builder.Property(t => t.DueDate)
-                .IsRequired()
+                .IsRequired(false)
                 .HasColumnType("timestamp with time zone");
 
             builder.Property(t => t.CreatedAt)

@@ -4,6 +4,7 @@ using ToDoList.Application.Exceptions;
 using ToDoList.Application.Interfaces;
 using ToDoList.Core.Entities;
 using ToDoList.Core.Interfaces;
+using ToDoList.Core.Models;
 
 namespace ToDoList.Application.Services
 {
@@ -46,11 +47,13 @@ namespace ToDoList.Application.Services
             return true;
         }
 
-        public async Task<List<UserTaskResponseDto>> GetUsersAsync(CancellationToken cancellationToken)
+        public async Task<PagedResult<UserTaskResponseDto>> GetUsersAsync(UserTaskFilter filter, SortParams sortParams, PageParams pageParams, CancellationToken cancellationToken)
         {
-            var tasks = await _tasks.GetAllUsersTasksAsync(cancellationToken);
+            var pagedResult = await _tasks.GetAllUsersTasksAsync(filter,sortParams, pageParams, cancellationToken);
 
-            return _mapper.Map<List<UserTaskResponseDto>>(tasks);
+            var dtos = _mapper.Map<UserTaskResponseDto[]>(pagedResult.Data);
+
+            return new PagedResult<UserTaskResponseDto>(dtos, pagedResult.TotalCount);
         }
 
         public async Task<UserTaskResponseDto?> GetUserTaskByIdAsync(Guid id, CancellationToken cancellationToken)

@@ -1,4 +1,5 @@
 ﻿using ToDoList.Core.Entities;
+using ToDoList.Core.Models;
 
 namespace ToDoList.Core.Interfaces
 {
@@ -6,7 +7,7 @@ namespace ToDoList.Core.Interfaces
     {
         Task AddUserTaskAsync(UserTask userTask, CancellationToken cancellationToken);
         Task<UserTask?> GetUserTaskByIdAsync(Guid id, CancellationToken cancellationToken);
-        Task<List<UserTask>> GetAllUsersTasksAsync(CancellationToken cancellationToken);
+        Task<PagedResult<UserTask>> GetAllUsersTasksAsync(UserTaskFilter filter, SortParams sortParams, PageParams pageParams, CancellationToken cancellationToken);
         void Delete(UserTask userTask);
         void Update(UserTask userTask);
         Task SaveChangesAsync(CancellationToken cancellationToken = default);

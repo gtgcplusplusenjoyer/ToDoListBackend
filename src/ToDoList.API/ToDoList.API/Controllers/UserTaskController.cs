@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ToDoList.Application.Dto;
 using ToDoList.Application.Interfaces;
+using ToDoList.Core.Models;
 
 namespace ToDoList.API.Controllers
 {
-    [Route("controller/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class UserTaskController : ControllerBase
     {
@@ -58,9 +59,9 @@ namespace ToDoList.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUsersTasksAsync(CancellationToken cancellationToken)
+        public async Task<IActionResult> GetUsersTasksAsync([FromQuery] UserTaskFilter filter,[FromQuery] SortParams sortParams,[FromQuery] PageParams pageParams, CancellationToken cancellationToken)
         {
-            var tasks = await _service.GetUsersAsync(cancellationToken);
+            var tasks = await _service.GetUsersAsync(filter,sortParams,pageParams, cancellationToken);
 
             return Ok(tasks);
         }

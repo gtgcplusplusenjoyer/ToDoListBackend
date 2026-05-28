@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/controller/UserTask": {
+    "/api/UserTask": {
       "post": {
         "tags": [
           "UserTask"
@@ -39,6 +39,67 @@
         "tags": [
           "UserTask"
         ],
+        "parameters": [
+          {
+            "name": "Name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Status",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/ToDoStatus"
+            }
+          },
+          {
+            "name": "Priority",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Priority"
+            }
+          },
+          {
+            "name": "DueTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "SortDirection",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/SortDirection"
+            }
+          },
+          {
+            "name": "Page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -46,7 +107,7 @@
         }
       }
     },
-    "/controller/UserTask/{id}": {
+    "/api/UserTask/{id}": {
       "get": {
         "tags": [
           "UserTask"
@@ -163,6 +224,14 @@
           2,
           3,
           4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "SortDirection": {
+        "enum": [
+          1,
+          2
         ],
         "type": "integer",
         "format": "int32"

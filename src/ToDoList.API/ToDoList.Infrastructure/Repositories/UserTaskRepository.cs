@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ToDoList.Core.Entities;
 using ToDoList.Core.Interfaces;
+using ToDoList.Core.Models;
 using ToDoList.Infrastructure.Context;
+using ToDoList.Infrastructure.Extensions;
 
 namespace ToDoList.Infrastructure.Repositories
 {
@@ -26,11 +28,13 @@ namespace ToDoList.Infrastructure.Repositories
             _tasks.Remove(userTask);
         }
 
-        public async Task<List<UserTask>> GetAllUsersTasksAsync(CancellationToken cancellationToken)
+        public async Task<PagedResult<UserTask>> GetAllUsersTasksAsync(UserTaskFilter filter, SortParams sortParams, PageParams pageParams, CancellationToken cancellationToken)
         {
             return await _tasks
-                .OrderBy(t=>t.Name)
-                .ToListAsync(cancellationToken);
+                .AsNoTracking()
+                .Filter(filter)
+                .Sort(sortParams)
+                .ToPagedAsync(pageParams);
         }
 
         public async Task<UserTask?> GetUserTaskByIdAsync(Guid id, CancellationToken cancellationToken)
