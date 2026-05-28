@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ToDoList.Application.Dto;
+using ToDoList.Application.Dto.UserTask;
 using ToDoList.Application.Interfaces;
 using ToDoList.Core.Models;
 

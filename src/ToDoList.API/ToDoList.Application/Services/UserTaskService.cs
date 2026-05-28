@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using ToDoList.Application.Dto;
+using ToDoList.Application.Dto.UserTask;
 using ToDoList.Application.Exceptions;
 using ToDoList.Application.Interfaces;
 using ToDoList.Core.Entities;

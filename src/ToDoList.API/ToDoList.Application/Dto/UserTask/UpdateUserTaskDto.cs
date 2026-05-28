@@ -1,8 +1,8 @@
 ﻿using ToDoList.Core.Enums;
 
-namespace ToDoList.Application.Dto
+namespace ToDoList.Application.Dto.UserTask
 {
-    public record CreateUserTaskDto(
+    public record UpdateUserTaskDto(
         string Name,
         string Description,
         ToDoStatus Status,

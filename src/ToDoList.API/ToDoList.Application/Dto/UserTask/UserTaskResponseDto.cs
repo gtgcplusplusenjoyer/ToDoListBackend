@@ -1,6 +1,6 @@
 ﻿using ToDoList.Core.Enums;
 
-namespace ToDoList.Application.Dto
+namespace ToDoList.Application.Dto.UserTask
 {
     public record UserTaskResponseDto
     {

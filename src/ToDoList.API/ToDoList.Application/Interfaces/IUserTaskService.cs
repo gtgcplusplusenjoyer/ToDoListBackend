@@ -1,4 +1,4 @@
-﻿using ToDoList.Application.Dto;
+﻿using ToDoList.Application.Dto.UserTask;
 using ToDoList.Core.Models;
 
 namespace ToDoList.Application.Interfaces
