@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 using ToDoList.Core.Entities.User;
 using ToDoList.Core.Interfaces;
 using ToDoList.Infrastructure.Context;
@@ -13,7 +12,7 @@ namespace ToDoList.Infrastructure.Repositories
         public UserRepository(ToDoListDbContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(_context));
-            _users= _context.Set<User>();   
+            _users = _context.Set<User>();
         }
 
         public async Task AddAsync(User user, CancellationToken cancellationToken)
@@ -39,6 +38,11 @@ namespace ToDoList.Infrastructure.Repositories
         public void Update(User user)
         {
             _users.Update(user);
+        }
+
+        public async Task<User?> GetUserById(Guid id)
+        {
+            return await _users.FirstOrDefaultAsync(_x => _x.Id == id);
         }
     }
 }
