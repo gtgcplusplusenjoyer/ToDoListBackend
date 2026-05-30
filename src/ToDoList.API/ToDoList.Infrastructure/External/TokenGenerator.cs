@@ -32,11 +32,6 @@ namespace ToDoList.Infrastructure.External
             };
         }
 
-        public ValueTask<TokenPair?> RefreshTokenPair(string refreshToken, Guid userId, CancellationToken cancellationToken)
-        {
-
-        }
-
         public string GenerateAccessToken(User user)
         {
             var claims = new List<Claim>

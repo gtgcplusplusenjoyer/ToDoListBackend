@@ -139,3 +139,8 @@ C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\
 C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\obj\Debug\net9.0\ToDoList.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\BCrypt.Net-Next.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
