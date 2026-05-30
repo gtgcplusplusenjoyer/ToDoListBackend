@@ -24,8 +24,6 @@ namespace ToDoList.Infrastructure.Configuration
             builder.Property(x => x.PasswordHash)
                 .IsRequired();
 
-            builder.Property(x => x.RefreshToken)
-                .HasMaxLength(500);
 
             builder.ToTable("Users");
         }

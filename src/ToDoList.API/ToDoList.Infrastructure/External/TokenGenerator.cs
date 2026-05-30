@@ -22,9 +22,6 @@ namespace ToDoList.Infrastructure.External
             var access = GenerateAccessToken(user);
             var refresh = GenerateRefreshToken();
 
-            user.RefreshToken = refresh;
-            user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(_settings.RefreshTokenExpirationDays);
-
             return new TokenPair
             {
                 AccessToken = access,

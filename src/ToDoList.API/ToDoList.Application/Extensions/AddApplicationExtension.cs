@@ -10,6 +10,7 @@ namespace ToDoList.Application.Extensions
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddScoped<IUserTaskService, UserTaskService>();
+            services.AddScoped<IAuthService, AuthService>();
             services.AddAutoMapper(cfg => { }, typeof(UserTaskMapper));
 
             return services;

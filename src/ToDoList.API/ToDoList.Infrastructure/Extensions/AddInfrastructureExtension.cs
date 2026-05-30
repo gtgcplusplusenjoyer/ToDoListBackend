@@ -6,6 +6,7 @@ using ToDoList.Core.Interfaces.External;
 using ToDoList.Infrastructure.Context;
 using ToDoList.Infrastructure.External;
 using ToDoList.Infrastructure.Repositories;
+using ToDoList.Infrastructure.Settings;
 
 namespace ToDoList.Infrastructure.Extensions
 {
@@ -17,6 +18,7 @@ namespace ToDoList.Infrastructure.Extensions
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
             services.AddScoped<IPasswordHasher, PasswordHasher>();
+            services.AddScoped<ITokenGenerator, TokenGenerator>();
 
             services.AddDbContext<ToDoListDbContext>(opt =>
             {
@@ -24,6 +26,10 @@ namespace ToDoList.Infrastructure.Extensions
             }
             );
 
+            services.Configure<AuthSettings>(opt =>
+            {
+                configuration.GetSection("Auth");
+            });
 
             return services;
         }

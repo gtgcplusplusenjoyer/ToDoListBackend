@@ -1,5 +1,53 @@
 [
   {
+    "ContainingType": "ToDoList.API.Controllers.AuthController",
+    "Method": "LoginAsync",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginUserDto",
+        "Type": "ToDoList.Application.Dto.User.LoginUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ToDoList.API.Controllers.AuthController",
+    "Method": "RefreshAsync",
+    "RelativePath": "api/Auth/refresh",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "refreshTokenRequest",
+        "Type": "ToDoList.Application.Dto.User.RefreshTokenRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ToDoList.API.Controllers.AuthController",
+    "Method": "RegisterAsync",
+    "RelativePath": "api/Auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerUserDto",
+        "Type": "ToDoList.Application.Dto.User.RegisterUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ToDoList.API.Controllers.UserTaskController",
     "Method": "CreateUserTask",
     "RelativePath": "api/UserTask",
@@ -9,7 +57,7 @@
     "Parameters": [
       {
         "Name": "createDto",
-        "Type": "ToDoList.Application.Dto.CreateUserTaskDto",
+        "Type": "ToDoList.Application.Dto.UserTask.CreateUserTaskDto",
         "IsRequired": true
       }
     ],
@@ -113,7 +161,7 @@
       },
       {
         "Name": "updateUserTaskDto",
-        "Type": "ToDoList.Application.Dto.UpdateUserTaskDto",
+        "Type": "ToDoList.Application.Dto.UserTask.UpdateUserTaskDto",
         "IsRequired": true
       }
     ],

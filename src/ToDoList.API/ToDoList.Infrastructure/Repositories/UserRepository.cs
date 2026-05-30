@@ -20,11 +20,6 @@ namespace ToDoList.Infrastructure.Repositories
             await _users.AddAsync(user, cancellationToken);
         }
 
-        public Task<User?> GetByRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken)
-        {
-            return _users.FirstOrDefaultAsync(x => x.RefreshToken == refreshToken);
-        }
-
         public async Task<User?> GetUserByEmail(string email)
         {
             return await _users.FirstOrDefaultAsync(x => x.Email == email);
