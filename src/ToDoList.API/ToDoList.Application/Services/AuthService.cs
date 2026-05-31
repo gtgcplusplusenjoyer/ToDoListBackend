@@ -144,5 +144,18 @@ namespace ToDoList.Application.Services
 
             return AuthResult.Success(tokenPair, user.Id);
         }
+
+        public async Task<AuthResult> LogoutAsync(Guid id, CancellationToken cancellationToken)
+        {
+            var user = await _userRepository.GetUserById(id);
+
+            if (user == null)
+            {
+                return AuthResult.Failure("User not found");
+            }
+
+            await _refreshTokenRepository.RevokeAllTokensByUserId(id,cancellationToken);
+            return AuthResult.Success(new TokenPair(), user.Id);
+        }
     }
 }

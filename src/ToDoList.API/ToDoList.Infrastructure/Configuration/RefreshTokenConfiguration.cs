@@ -16,7 +16,7 @@ namespace ToDoList.Infrastructure.Configuration
 
             builder.Property(t => t.CreatedAt)
                 .IsRequired()
-                .HasDefaultValueSql("GETUTCDATE");
+                .HasDefaultValueSql("CURRENT_TIMESTAMP");
 
             builder.Property(t => t.ExpiresAt)
                 .IsRequired();

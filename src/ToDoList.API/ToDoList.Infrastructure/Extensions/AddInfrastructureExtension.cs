@@ -29,10 +29,7 @@ namespace ToDoList.Infrastructure.Extensions
             }
             );
 
-            services.Configure<AuthSettings>(opt =>
-            {
-                configuration.GetSection("Auth");
-            });
+            services.Configure<AuthSettings>(configuration.GetSection("Auth"));
 
             services.AddAuthExtension(configuration);
 

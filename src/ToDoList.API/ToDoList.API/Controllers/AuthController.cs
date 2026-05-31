@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using ToDoList.Application.Dto.User;
 using ToDoList.Application.Interfaces;
 
@@ -67,6 +69,26 @@ namespace ToDoList.API.Controllers
             });
         }
 
+        [Authorize]
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout(CancellationToken cancellationToken)
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+
+            if (userIdClaim == null || !Guid.TryParse(userIdClaim.Value, out var userId))
+            {
+                return BadRequest(new { message = "Invalid user identifier in token" });
+            }
+
+            var result = await _authService.LogoutAsync(userId, cancellationToken);
+
+            if (!result.IsSuccess)
+            {
+                return BadRequest(new { message = result.ErrorMessage });
+            }
+
+            return Ok(new {message = "Logged out successfully"});
+        }
 
     }
 }

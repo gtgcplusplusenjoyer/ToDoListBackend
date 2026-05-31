@@ -41,5 +41,23 @@ namespace ToDoList.Infrastructure.Repositories
         {
             await _context.SaveChangesAsync(cancellationToken);
         }
+
+        public async Task RevokeAllTokensByUserId(Guid userId,CancellationToken cancellationToken)
+        {
+            var userTokens = await _rTokens
+                .Where(rt=>rt.UserId == userId && !rt.IsRevoked)
+                .ToListAsync(cancellationToken);
+
+            foreach (var token in userTokens)
+            {
+                token.IsRevoked = true;
+            }
+
+            if (userTokens.Any())
+            {
+                await _context.SaveChangesAsync(cancellationToken);
+            }
+
+        }
     }
 }
