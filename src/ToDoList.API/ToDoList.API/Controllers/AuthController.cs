@@ -11,9 +11,11 @@ namespace ToDoList.API.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
-        public AuthController(IAuthService service)
+        private readonly ILogger<AuthController> _logger;
+        public AuthController(IAuthService service, ILogger<AuthController> logger)
         {
             _authService = service;
+            _logger = logger;
         }
 
         [HttpPost("register")]

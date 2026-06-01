@@ -1,4 +1,4 @@
-﻿namespace ToDoList.Application.Exceptions
+﻿namespace ToDoList.Infrastructure.Exceptions
 {
     [Serializable]
     internal class NotFoundException : Exception

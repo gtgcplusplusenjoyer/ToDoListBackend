@@ -1,5 +1,6 @@
 using ToDoList.Application.Extensions;
 using ToDoList.Infrastructure.Extensions;
+using ToDoList.Infrastructure.MiddleWares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 

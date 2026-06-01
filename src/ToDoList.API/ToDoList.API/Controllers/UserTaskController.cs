@@ -37,11 +37,6 @@ namespace ToDoList.API.Controllers
         {
             var taskUser = await _service.DeleteUserTaskAsync(id, cancellationToken);
 
-            if (!taskUser)
-            {
-                return BadRequest(new {message = "UserTask not found" });
-            }
-
             return Ok(taskUser);
         }
 
@@ -50,16 +45,11 @@ namespace ToDoList.API.Controllers
         {
             var taskUser= await _service.UpdateUserTaskAsync(id, updateUserTaskDto, cancellationToken);
 
-            if (taskUser == null)
-            {
-                return BadRequest(new { message = "UserTask not found" });
-            } 
-
             return Ok(taskUser);
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUsersTasksAsync([FromQuery] UserTaskFilter filter,[FromQuery] SortParams sortParams,[FromQuery] PageParams pageParams, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetUserTasksAsync([FromQuery] UserTaskFilter filter,[FromQuery] SortParams sortParams,[FromQuery] PageParams pageParams, CancellationToken cancellationToken)
         {
             var tasks = await _service.GetUsersAsync(filter,sortParams,pageParams, cancellationToken);
 
