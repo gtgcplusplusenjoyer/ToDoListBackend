@@ -31,7 +31,7 @@ namespace ToDoList.Application.Services
 
         public async Task<AuthResult> LoginAsync(LoginUserDto loginUserDto, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.GetUserByEmail(loginUserDto.Email);
+            var user = await _userRepository.GetUserByEmail(loginUserDto.Email, cancellationToken);
 
             if (user == null)
             {
@@ -80,7 +80,7 @@ namespace ToDoList.Application.Services
                 return AuthResult.Failure("Refresh token has expired");
             }
 
-            var user = await _userRepository.GetUserById(storedToken.UserId);
+            var user = await _userRepository.GetUserById(storedToken.UserId, cancellationToken);
 
             if (user == null)
             {
@@ -109,7 +109,7 @@ namespace ToDoList.Application.Services
 
         public async Task<AuthResult> RegisterAsync(RegisterUserDto registerUserDto, CancellationToken cancellationToken)
         {
-            var existingUser = await _userRepository.GetUserByEmail(registerUserDto.Email);
+            var existingUser = await _userRepository.GetUserByEmail(registerUserDto.Email, cancellationToken);
 
             if (existingUser != null)
             {
@@ -147,7 +147,7 @@ namespace ToDoList.Application.Services
 
         public async Task<AuthResult> LogoutAsync(Guid id, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.GetUserById(id);
+            var user = await _userRepository.GetUserById(id, cancellationToken);
 
             if (user == null)
             {
@@ -155,7 +155,8 @@ namespace ToDoList.Application.Services
             }
 
             await _refreshTokenRepository.RevokeAllTokensByUserId(id,cancellationToken);
-            return AuthResult.Success(new TokenPair(), user.Id);
+            await _refreshTokenRepository.SaveChangesAsync(cancellationToken);
+            return AuthResult.Success(user.Id);
         }
     }
 }

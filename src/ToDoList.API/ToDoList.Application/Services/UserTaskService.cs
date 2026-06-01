@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using ToDoList.Application.Dto.UserTask;
-using ToDoList.Application.Exceptions;
 using ToDoList.Application.Interfaces;
 using ToDoList.Core.Entities;
 using ToDoList.Core.Interfaces;
 using ToDoList.Core.Models;
+using ToDoList.Infrastructure.Exceptions;
 
 namespace ToDoList.Application.Services
 {
@@ -25,7 +25,7 @@ namespace ToDoList.Application.Services
             task.CreatedAt = DateTime.UtcNow;
             task.UpdatedAt = null;
 
-            await _tasks.AddUserTaskAsync(task,cancellationToken);
+            await _tasks.AddUserTaskAsync(task, cancellationToken);
             await _tasks.SaveChangesAsync(cancellationToken);
 
             var response = _mapper.Map<UserTaskResponseDto>(task);
@@ -34,11 +34,11 @@ namespace ToDoList.Application.Services
 
         public async Task<bool> DeleteUserTaskAsync(Guid id, CancellationToken cancellationToken)
         {
-            var task = await _tasks.GetUserTaskByIdAsync(id,cancellationToken);
-            
-            if(task == null)
+            var task = await _tasks.GetUserTaskByIdAsync(id, cancellationToken);
+
+            if (task == null)
             {
-                throw new NotFoundException("UserTask not found");
+                throw new NotFoundException($"UserTask with id {id} not found");
             }
 
             _tasks.Delete(task);
@@ -49,32 +49,32 @@ namespace ToDoList.Application.Services
 
         public async Task<PagedResult<UserTaskResponseDto>> GetUsersAsync(UserTaskFilter filter, SortParams sortParams, PageParams pageParams, CancellationToken cancellationToken)
         {
-            var pagedResult = await _tasks.GetAllUsersTasksAsync(filter,sortParams, pageParams, cancellationToken);
+            var pagedResult = await _tasks.GetAllUsersTasksAsync(filter, sortParams, pageParams, cancellationToken);
 
             var dtos = _mapper.Map<UserTaskResponseDto[]>(pagedResult.Data);
 
             return new PagedResult<UserTaskResponseDto>(dtos, pagedResult.TotalCount);
         }
 
-        public async Task<UserTaskResponseDto?> GetUserTaskByIdAsync(Guid id, CancellationToken cancellationToken)
-        {
-            var task = await _tasks.GetUserTaskByIdAsync(id, cancellationToken);
-
-            if(task == null)
-            {
-                return null;
-            }
-
-            return _mapper.Map<UserTaskResponseDto>(task);
-        }
-
-        public async Task<UserTaskResponseDto?> UpdateUserTaskAsync(Guid id, UpdateUserTaskDto updateUserTaskDto, CancellationToken cancellationToken)
+        public async Task<UserTaskResponseDto> GetUserTaskByIdAsync(Guid id, CancellationToken cancellationToken)
         {
             var task = await _tasks.GetUserTaskByIdAsync(id, cancellationToken);
 
             if (task == null)
             {
-                throw new NotFoundException("UserTask not found");
+                throw new NotFoundException($"UserTask with id {id} not found");
+            }
+
+            return _mapper.Map<UserTaskResponseDto>(task);
+        }
+
+        public async Task<UserTaskResponseDto> UpdateUserTaskAsync(Guid id, UpdateUserTaskDto updateUserTaskDto, CancellationToken cancellationToken)
+        {
+            var task = await _tasks.GetUserTaskByIdAsync(id, cancellationToken);
+
+            if (task == null)
+            {
+                throw new NotFoundException($"UserTask with id {id} not found");
             }
 
             _mapper.Map(updateUserTaskDto, task);

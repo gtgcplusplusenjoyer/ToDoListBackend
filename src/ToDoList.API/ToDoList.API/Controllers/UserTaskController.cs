@@ -37,7 +37,7 @@ namespace ToDoList.API.Controllers
         {
             var taskUser = await _service.DeleteUserTaskAsync(id, cancellationToken);
 
-            return Ok(taskUser);
+            return NoContent();
         }
 
         [HttpPut("{id}")]

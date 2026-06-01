@@ -20,9 +20,9 @@ namespace ToDoList.Infrastructure.Repositories
             await _users.AddAsync(user, cancellationToken);
         }
 
-        public async Task<User?> GetUserByEmail(string email)
+        public async Task<User?> GetUserByEmail(string email, CancellationToken cancellationToken)
         {
-            return await _users.FirstOrDefaultAsync(x => x.Email == email);
+            return await _users.FirstOrDefaultAsync(x => x.Email == email, cancellationToken);
         }
 
         public async Task SaveChangesAsync(CancellationToken cancellationToken)
@@ -35,9 +35,9 @@ namespace ToDoList.Infrastructure.Repositories
             _users.Update(user);
         }
 
-        public async Task<User?> GetUserById(Guid id)
+        public async Task<User?> GetUserById(Guid id, CancellationToken cancellationToken)
         {
-            return await _users.FirstOrDefaultAsync(_x => _x.Id == id);
+            return await _users.FirstOrDefaultAsync(_x => _x.Id == id, cancellationToken);
         }
     }
 }

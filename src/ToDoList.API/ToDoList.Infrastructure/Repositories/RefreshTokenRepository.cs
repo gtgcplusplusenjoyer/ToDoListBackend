@@ -33,7 +33,6 @@ namespace ToDoList.Infrastructure.Repositories
             if (token != null)
             {
                 token.IsRevoked = true;
-                await _context.SaveChangesAsync();
             }
         }
 
