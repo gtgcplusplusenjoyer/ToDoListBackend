@@ -30,7 +30,7 @@ namespace ToDoList.Infrastructure.MiddleWares
             }
 
             catch (DbUpdateException ex)
-            { 
+            {
                 await HandleExceptionAsync(context, ex.Message, HttpStatusCode.BadRequest, "Error with update database");
             }
 

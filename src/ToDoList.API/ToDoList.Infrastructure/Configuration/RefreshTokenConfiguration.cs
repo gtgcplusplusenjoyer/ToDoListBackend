@@ -8,7 +8,7 @@ namespace ToDoList.Infrastructure.Configuration
     {
         public void Configure(EntityTypeBuilder<RefreshToken> builder)
         {
-            builder.HasKey(t=>t.Id);
+            builder.HasKey(t => t.Id);
 
             builder.Property(t => t.Token)
                 .IsRequired()

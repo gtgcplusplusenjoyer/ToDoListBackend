@@ -1,6 +1,6 @@
 ﻿namespace ToDoList.Core.Entities.User
 {
-    public class RefreshToken :BaseEntity
+    public class RefreshToken : BaseEntity
     {
         public string Token { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }

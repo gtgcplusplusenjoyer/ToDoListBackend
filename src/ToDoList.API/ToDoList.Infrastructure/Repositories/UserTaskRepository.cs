@@ -15,7 +15,7 @@ namespace ToDoList.Infrastructure.Repositories
         public UserTaskRepository(ToDoListDbContext context)
         {
             _context = context ?? throw new ArgumentNullException("Context not found");
-            _tasks = _context.Set<UserTask>();  
+            _tasks = _context.Set<UserTask>();
         }
 
         public async Task AddUserTaskAsync(UserTask userTask, CancellationToken cancellationToken)
@@ -39,7 +39,7 @@ namespace ToDoList.Infrastructure.Repositories
 
         public async Task<UserTask?> GetUserTaskByIdAsync(Guid id, CancellationToken cancellationToken)
         {
-            return await _tasks.FirstOrDefaultAsync(t=>t.Id == id,cancellationToken);
+            return await _tasks.FirstOrDefaultAsync(t => t.Id == id, cancellationToken);
         }
 
         public async Task SaveChangesAsync(CancellationToken cancellationToken = default)

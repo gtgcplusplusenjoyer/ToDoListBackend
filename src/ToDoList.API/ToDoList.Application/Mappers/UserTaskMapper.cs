@@ -9,7 +9,7 @@ namespace ToDoList.Application.Mappers
         public UserTaskMapper()
         {
             CreateMap<CreateUserTaskDto, UserTask>().ReverseMap();
-            CreateMap<UpdateUserTaskDto,UserTask>().ReverseMap();
+            CreateMap<UpdateUserTaskDto, UserTask>().ReverseMap();
             CreateMap<UserTaskResponseDto, UserTask>().ReverseMap();
         }
     }

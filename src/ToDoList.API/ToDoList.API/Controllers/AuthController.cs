@@ -25,7 +25,7 @@ namespace ToDoList.API.Controllers
 
             if (!result.IsSuccess)
             {
-                return BadRequest(new {message = result.ErrorMessage});
+                return BadRequest(new { message = result.ErrorMessage });
             }
 
             return Ok(new
@@ -89,7 +89,7 @@ namespace ToDoList.API.Controllers
                 return BadRequest(new { message = result.ErrorMessage });
             }
 
-            return Ok(new {message = "Logged out successfully"});
+            return Ok(new { message = "Logged out successfully" });
         }
 
     }

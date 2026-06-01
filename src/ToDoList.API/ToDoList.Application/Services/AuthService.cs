@@ -20,12 +20,12 @@ namespace ToDoList.Application.Services
             ITokenGenerator tokenGenerator,
             IPasswordHasher passwordHasher,
             IRefreshTokenRepository refreshTokenRepository,
-            IOptions<AuthSettings> settings )
+            IOptions<AuthSettings> settings)
         {
-            _passwordHasher= passwordHasher;
-            _userRepository= userRepository;
-            _tokenGenerator= tokenGenerator;
-            _refreshTokenRepository= refreshTokenRepository;
+            _passwordHasher = passwordHasher;
+            _userRepository = userRepository;
+            _tokenGenerator = tokenGenerator;
+            _refreshTokenRepository = refreshTokenRepository;
             _settings = settings.Value;
         }
 
@@ -38,7 +38,7 @@ namespace ToDoList.Application.Services
                 return AuthResult.Failure("User with this email not exist");
             }
 
-            if(!_passwordHasher.VerifyPassword(loginUserDto.Password, user.PasswordHash))
+            if (!_passwordHasher.VerifyPassword(loginUserDto.Password, user.PasswordHash))
             {
                 return AuthResult.Failure("Invalid email or password");
             }
@@ -65,12 +65,12 @@ namespace ToDoList.Application.Services
         {
             var storedToken = await _refreshTokenRepository.GetByTokenAsync(refreshToken);
 
-            if(storedToken == null)
+            if (storedToken == null)
             {
                 return AuthResult.Failure("Refresh token is not found");
             }
 
-            if(storedToken.IsRevoked == true)
+            if (storedToken.IsRevoked == true)
             {
                 return AuthResult.Failure("Refresh token has been revoked");
             }
@@ -154,7 +154,7 @@ namespace ToDoList.Application.Services
                 return AuthResult.Failure("User not found");
             }
 
-            await _refreshTokenRepository.RevokeAllTokensByUserId(id,cancellationToken);
+            await _refreshTokenRepository.RevokeAllTokensByUserId(id, cancellationToken);
             await _refreshTokenRepository.SaveChangesAsync(cancellationToken);
             return AuthResult.Success(user.Id);
         }

@@ -17,7 +17,7 @@ namespace ToDoList.Infrastructure.Extensions
 
             if (filter.Priority.HasValue)
             {
-                query = query.Where(t=>t.Priority == filter.Priority.Value);
+                query = query.Where(t => t.Priority == filter.Priority.Value);
             }
 
             if (filter.Status.HasValue)
@@ -26,8 +26,8 @@ namespace ToDoList.Infrastructure.Extensions
             }
 
             if (filter.DueTime.HasValue)
-            { 
-                query = query.Where(t=>t.DueDate!=null && t.DueDate.Value.Date.Day == filter.DueTime.Value.Day );
+            {
+                query = query.Where(t => t.DueDate != null && t.DueDate.Value.Date.Day == filter.DueTime.Value.Day);
             }
 
             return query;
@@ -35,7 +35,7 @@ namespace ToDoList.Infrastructure.Extensions
 
         public static IQueryable<UserTask> Sort(this IQueryable<UserTask> query, SortParams sortParams)
         {
-            if(sortParams.SortDirection == SortDirection.Desc)
+            if (sortParams.SortDirection == SortDirection.Desc)
             {
                 return query.OrderByDescending(GetKeySelector(sortParams.OrderBy));
             }
@@ -47,7 +47,7 @@ namespace ToDoList.Infrastructure.Extensions
         {
             var count = await query.CountAsync();
 
-            if(count == 0)
+            if (count == 0)
             {
                 return new PagedResult<UserTask>([], 0);
             }
@@ -76,7 +76,7 @@ namespace ToDoList.Infrastructure.Extensions
             {
                 nameof(UserTask.Priority) => t => t.Priority,
                 nameof(UserTask.Status) => t => t.Status,
-                nameof(UserTask.DueDate) => t => t.DueDate, 
+                nameof(UserTask.DueDate) => t => t.DueDate,
                 _ => t => t.Name
             };
 

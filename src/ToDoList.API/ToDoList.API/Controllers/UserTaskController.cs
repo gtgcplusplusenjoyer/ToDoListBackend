@@ -41,17 +41,17 @@ namespace ToDoList.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUserTaskAsync(Guid id,[FromBody] UpdateUserTaskDto updateUserTaskDto, CancellationToken cancellationToken)
+        public async Task<IActionResult> UpdateUserTaskAsync(Guid id, [FromBody] UpdateUserTaskDto updateUserTaskDto, CancellationToken cancellationToken)
         {
-            var taskUser= await _service.UpdateUserTaskAsync(id, updateUserTaskDto, cancellationToken);
+            var taskUser = await _service.UpdateUserTaskAsync(id, updateUserTaskDto, cancellationToken);
 
             return Ok(taskUser);
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUserTasksAsync([FromQuery] UserTaskFilter filter,[FromQuery] SortParams sortParams,[FromQuery] PageParams pageParams, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetUserTasksAsync([FromQuery] UserTaskFilter filter, [FromQuery] SortParams sortParams, [FromQuery] PageParams pageParams, CancellationToken cancellationToken)
         {
-            var tasks = await _service.GetUsersAsync(filter,sortParams,pageParams, cancellationToken);
+            var tasks = await _service.GetUsersAsync(filter, sortParams, pageParams, cancellationToken);
 
             return Ok(tasks);
         }

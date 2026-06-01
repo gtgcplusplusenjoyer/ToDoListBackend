@@ -6,9 +6,9 @@ namespace ToDoList.Core.Interfaces
     {
         Task<User?> GetUserById(Guid id, CancellationToken cancellationToken);
         Task<User?> GetUserByEmail(string email, CancellationToken cancellationToken);
-        Task AddAsync(User user,CancellationToken cancellationToken);
+        Task AddAsync(User user, CancellationToken cancellationToken);
         void Update(User user);
         Task SaveChangesAsync(CancellationToken cancellationToken);
-        
+
     }
 }
