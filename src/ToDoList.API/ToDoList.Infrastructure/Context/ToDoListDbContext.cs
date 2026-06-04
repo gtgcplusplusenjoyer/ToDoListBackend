@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ToDoList.Core.Entities;
 using ToDoList.Core.Entities.User;
+using ToDoList.Core.Tokens;
 using ToDoList.Infrastructure.Configuration;
 
 namespace ToDoList.Infrastructure.Context

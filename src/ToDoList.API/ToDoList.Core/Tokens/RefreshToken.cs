@@ -1,4 +1,6 @@
-﻿namespace ToDoList.Core.Entities.User
+﻿using ToDoList.Core.Entities;
+
+namespace ToDoList.Core.Tokens
 {
     public class RefreshToken : BaseEntity
     {

@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using ToDoList.Core.Entities.User;
 using ToDoList.Core.Interfaces.External;
+using ToDoList.Core.Tokens;
 using ToDoList.Infrastructure.Settings;
 
 namespace ToDoList.Infrastructure.External

@@ -1,4 +1,4 @@
-﻿using ToDoList.Core.Entities.User;
+﻿using ToDoList.Core.Tokens;
 
 namespace ToDoList.Core.Interfaces
 {

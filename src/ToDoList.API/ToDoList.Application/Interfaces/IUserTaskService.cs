@@ -9,6 +9,6 @@ namespace ToDoList.Application.Interfaces
         Task<UserTaskResponseDto> UpdateUserTaskAsync(Guid id, UpdateUserTaskDto updateUserTaskDto, CancellationToken cancellationToken);
         Task<bool> DeleteUserTaskAsync(Guid id, CancellationToken cancellationToken);
         Task<UserTaskResponseDto> GetUserTaskByIdAsync(Guid id, CancellationToken cancellationToken);
-        Task<PagedResult<UserTaskResponseDto>> GetUsersAsync(UserTaskFilter filter, SortParams sortParams, PageParams pageParams, CancellationToken cancellationToken);
+        Task<PagedResult<UserTaskResponseDto>> GetTasksAsync(UserTaskFilter filter, SortParams sortParams, PageParams pageParams, CancellationToken cancellationToken);
     }
 }

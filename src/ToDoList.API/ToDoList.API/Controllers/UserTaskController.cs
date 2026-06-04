@@ -53,7 +53,7 @@ namespace ToDoList.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetUserTasksAsync([FromQuery] UserTaskFilter filter, [FromQuery] SortParams sortParams, [FromQuery] PageParams pageParams, CancellationToken cancellationToken)
         {
-            var tasks = await _service.GetUsersAsync(filter, sortParams, pageParams, cancellationToken);
+            var tasks = await _service.GetTasksAsync(filter, sortParams, pageParams, cancellationToken);
 
             return Ok(tasks);
         }

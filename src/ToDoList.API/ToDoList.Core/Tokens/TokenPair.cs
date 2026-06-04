@@ -1,4 +1,4 @@
-﻿namespace ToDoList.Core.Entities.User
+﻿namespace ToDoList.Core.Tokens
 {
     public class TokenPair
     {

@@ -50,7 +50,7 @@ namespace ToDoList.Application.Services
             return true;
         }
 
-        public async Task<PagedResult<UserTaskResponseDto>> GetUsersAsync(
+        public async Task<PagedResult<UserTaskResponseDto>> GetTasksAsync(
             UserTaskFilter filter,
             SortParams sortParams,
             PageParams pageParams,

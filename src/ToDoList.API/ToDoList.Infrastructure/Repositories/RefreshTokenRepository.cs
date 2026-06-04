@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ToDoList.Core.Entities.User;
 using ToDoList.Core.Interfaces;
+using ToDoList.Core.Tokens;
 using ToDoList.Infrastructure.Context;
 
 namespace ToDoList.Infrastructure.Repositories
@@ -50,11 +50,6 @@ namespace ToDoList.Infrastructure.Repositories
             foreach (var token in userTokens)
             {
                 token.IsRevoked = true;
-            }
-
-            if (userTokens.Any())
-            {
-                await _context.SaveChangesAsync(cancellationToken);
             }
 
         }
