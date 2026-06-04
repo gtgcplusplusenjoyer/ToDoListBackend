@@ -156,6 +156,7 @@ namespace ToDoList.Application.Services
 
             await _refreshTokenRepository.RevokeAllTokensByUserId(id, cancellationToken);
             await _refreshTokenRepository.SaveChangesAsync(cancellationToken);
+
             return AuthResult.Success(user.Id);
         }
     }

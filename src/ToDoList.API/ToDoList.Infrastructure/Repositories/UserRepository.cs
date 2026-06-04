@@ -11,7 +11,7 @@ namespace ToDoList.Infrastructure.Repositories
         private readonly DbSet<User> _users;
         public UserRepository(ToDoListDbContext context)
         {
-            _context = context ?? throw new ArgumentNullException(nameof(_context));
+            _context = context ?? throw new ArgumentNullException(nameof(context));
             _users = _context.Set<User>();
         }
 

@@ -12,23 +12,23 @@ namespace ToDoList.Infrastructure.Repositories
 
         public RefreshTokenRepository(ToDoListDbContext context)
         {
-            _context = context ?? throw new ArgumentNullException(nameof(_context));
+            _context = context ?? throw new ArgumentNullException(nameof(context));
             _rTokens = _context.Set<RefreshToken>();
         }
 
-        public async Task CreateAsync(RefreshToken refreshToken)
+        public async Task CreateAsync(RefreshToken refreshToken,CancellationToken cancellationToken)
         {
-            await _rTokens.AddAsync(refreshToken);
+            await _rTokens.AddAsync(refreshToken, cancellationToken);
         }
 
-        public Task<RefreshToken?> GetByTokenAsync(string token)
+        public Task<RefreshToken?> GetByTokenAsync(string token, CancellationToken cancellationToken)
         {
-            return _rTokens.FirstOrDefaultAsync(r => r.Token == token);
+            return _rTokens.FirstOrDefaultAsync(r => r.Token == token, cancellationToken);
         }
 
-        public async Task RevokeAsync(Guid tokenId)
+        public async Task RevokeAsync(Guid tokenId,CancellationToken cancellationToken)
         {
-            var token = await _rTokens.FindAsync(tokenId);
+            var token = await _rTokens.FindAsync(tokenId, cancellationToken);
 
             if (token != null)
             {

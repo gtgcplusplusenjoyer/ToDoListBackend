@@ -41,7 +41,9 @@ namespace ToDoList.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUserTaskAsync(Guid id, [FromBody] UpdateUserTaskDto updateUserTaskDto, CancellationToken cancellationToken)
+        public async Task<IActionResult> UpdateUserTaskAsync(Guid id,
+            [FromBody] UpdateUserTaskDto updateUserTaskDto,
+            CancellationToken cancellationToken)
         {
             var taskUser = await _service.UpdateUserTaskAsync(id, updateUserTaskDto, cancellationToken);
 

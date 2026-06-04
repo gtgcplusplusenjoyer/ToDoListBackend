@@ -4,10 +4,10 @@ namespace ToDoList.Core.Interfaces
 {
     public interface IRefreshTokenRepository
     {
-        Task<RefreshToken?> GetByTokenAsync(string token);
-        Task CreateAsync(RefreshToken refreshToken);
-        Task RevokeAsync(Guid tokenId);
-        Task RevokeAllTokensByUserId(Guid userId, CancellationToken cancellationToken);
-        Task SaveChangesAsync(CancellationToken cancellationToken);
+        Task<RefreshToken?> GetByTokenAsync(string token, CancellationToken cancellationToken = default);
+        Task CreateAsync(RefreshToken refreshToken, CancellationToken cancellationToken = default);
+        Task RevokeAsync(Guid tokenId, CancellationToken cancellationToken = default );
+        Task RevokeAllTokensByUserId(Guid userId, CancellationToken cancellationToken=default);
+        Task SaveChangesAsync(CancellationToken cancellationToken=default);
     }
 }

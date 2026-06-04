@@ -18,7 +18,9 @@ namespace ToDoList.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<UserTaskResponseDto> CreateUserTaskAsync(CreateUserTaskDto createUserTaskDto, CancellationToken cancellationToken)
+        public async Task<UserTaskResponseDto> CreateUserTaskAsync(
+            CreateUserTaskDto createUserTaskDto,
+            CancellationToken cancellationToken)
         {
             var task = _mapper.Map<UserTask>(createUserTaskDto);
             task.Id = Guid.NewGuid();
@@ -29,6 +31,7 @@ namespace ToDoList.Application.Services
             await _tasks.SaveChangesAsync(cancellationToken);
 
             var response = _mapper.Map<UserTaskResponseDto>(task);
+
             return response;
         }
 
@@ -47,7 +50,11 @@ namespace ToDoList.Application.Services
             return true;
         }
 
-        public async Task<PagedResult<UserTaskResponseDto>> GetUsersAsync(UserTaskFilter filter, SortParams sortParams, PageParams pageParams, CancellationToken cancellationToken)
+        public async Task<PagedResult<UserTaskResponseDto>> GetUsersAsync(
+            UserTaskFilter filter,
+            SortParams sortParams,
+            PageParams pageParams,
+            CancellationToken cancellationToken)
         {
             var pagedResult = await _tasks.GetAllUsersTasksAsync(filter, sortParams, pageParams, cancellationToken);
 
@@ -68,7 +75,8 @@ namespace ToDoList.Application.Services
             return _mapper.Map<UserTaskResponseDto>(task);
         }
 
-        public async Task<UserTaskResponseDto> UpdateUserTaskAsync(Guid id, UpdateUserTaskDto updateUserTaskDto, CancellationToken cancellationToken)
+        public async Task<UserTaskResponseDto> UpdateUserTaskAsync(Guid id, UpdateUserTaskDto updateUserTaskDto
+            , CancellationToken cancellationToken)
         {
             var task = await _tasks.GetUserTaskByIdAsync(id, cancellationToken);
 
