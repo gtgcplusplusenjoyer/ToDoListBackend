@@ -12,5 +12,6 @@ namespace ToDoList.Application.Dto.UserTask
         public DateTime DueDate { get; init; }
         public DateTime CreatedAt { get; init; }
         public DateTime? UpdatedAt { get; init; }
+        public Guid UserId { get; init; }
     }
 }

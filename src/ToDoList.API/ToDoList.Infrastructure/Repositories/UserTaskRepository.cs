@@ -28,10 +28,15 @@ namespace ToDoList.Infrastructure.Repositories
             _tasks.Remove(userTask);
         }
 
-        public async Task<PagedResult<UserTask>> GetAllUsersTasksAsync(UserTaskFilter filter, SortParams sortParams, PageParams pageParams, CancellationToken cancellationToken)
+        public async Task<PagedResult<UserTask>> GetAllUsersTasksAsync(UserTaskFilter filter,
+            SortParams sortParams,
+            PageParams pageParams,
+            Guid userId,
+            CancellationToken cancellationToken)
         {
             return await _tasks
                 .AsNoTracking()
+                .Where(t =>t.UserId == userId)
                 .Filter(filter)
                 .Sort(sortParams)
                 .ToPagedAsync(pageParams);
@@ -50,6 +55,11 @@ namespace ToDoList.Infrastructure.Repositories
         public void Update(UserTask userTask)
         {
             _tasks.Update(userTask);
+        }
+
+        public async Task<UserTask?> GetUserTaskByIdAndUserIdAsync(Guid id, Guid userId, CancellationToken cancellationToken)
+        {
+            return await _tasks.FirstOrDefaultAsync(t=>t.Id == id && t.UserId == userId, cancellationToken);
         }
     }
 }

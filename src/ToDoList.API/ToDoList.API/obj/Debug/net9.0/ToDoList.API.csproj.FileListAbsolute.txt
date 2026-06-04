@@ -144,3 +144,7 @@ C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\
 C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\FluentValidation.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\SharpGrip.FluentValidation.AutoValidation.Mvc.dll
+C:\Users\User\Documents\ToDoList\src\ToDoList.API\ToDoList.API\bin\Debug\net9.0\SharpGrip.FluentValidation.AutoValidation.Shared.dll

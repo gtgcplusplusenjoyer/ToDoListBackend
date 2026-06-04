@@ -76,17 +76,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RefreshTokenRequest"
+                "$ref": "#/components/schemas/RefreshTokenRequestDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/RefreshTokenRequest"
+                "$ref": "#/components/schemas/RefreshTokenRequestDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/RefreshTokenRequest"
+                "$ref": "#/components/schemas/RefreshTokenRequestDto"
               }
             }
           }
@@ -347,7 +347,7 @@
         "type": "integer",
         "format": "int32"
       },
-      "RefreshTokenRequest": {
+      "RefreshTokenRequestDto": {
         "type": "object",
         "properties": {
           "refreshToken": {

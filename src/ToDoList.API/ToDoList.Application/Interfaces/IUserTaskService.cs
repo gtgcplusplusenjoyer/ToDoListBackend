@@ -5,10 +5,23 @@ namespace ToDoList.Application.Interfaces
 {
     public interface IUserTaskService
     {
-        Task<UserTaskResponseDto> CreateUserTaskAsync(CreateUserTaskDto createUserTaskDto, CancellationToken cancellationToken);
-        Task<UserTaskResponseDto> UpdateUserTaskAsync(Guid id, UpdateUserTaskDto updateUserTaskDto, CancellationToken cancellationToken);
-        Task<bool> DeleteUserTaskAsync(Guid id, CancellationToken cancellationToken);
-        Task<UserTaskResponseDto> GetUserTaskByIdAsync(Guid id, CancellationToken cancellationToken);
-        Task<PagedResult<UserTaskResponseDto>> GetTasksAsync(UserTaskFilter filter, SortParams sortParams, PageParams pageParams, CancellationToken cancellationToken);
+        Task<UserTaskResponseDto> CreateUserTaskAsync(CreateUserTaskDto createUserTaskDto,
+            Guid userId,
+            CancellationToken cancellationToken);
+        Task<UserTaskResponseDto> UpdateUserTaskAsync(Guid id,
+            UpdateUserTaskDto updateUserTaskDto,
+            Guid UserId,
+            CancellationToken cancellationToken);
+        Task<bool> DeleteUserTaskAsync(Guid id,
+            Guid userId,
+            CancellationToken cancellationToken);
+        Task<UserTaskResponseDto> GetUserTaskByIdAsync(Guid id,
+            Guid userId, 
+            CancellationToken cancellationToken);
+        Task<PagedResult<UserTaskResponseDto>> GetTasksAsync(UserTaskFilter filter,
+            SortParams sortParams,
+            PageParams pageParams,
+            Guid userId,
+            CancellationToken cancellationToken);
     }
 }

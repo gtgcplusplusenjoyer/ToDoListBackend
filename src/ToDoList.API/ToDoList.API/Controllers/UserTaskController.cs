@@ -1,13 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ToDoList.Application.Dto.UserTask;
 using ToDoList.Application.Interfaces;
+using ToDoList.Core.Entities.User;
 using ToDoList.Core.Models;
 
 namespace ToDoList.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserTaskController : ControllerBase
+    [Authorize]
+    public class UserTaskController : ApiController
     {
         private readonly IUserTaskService _service;
 
@@ -19,7 +22,7 @@ namespace ToDoList.API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateUserTask([FromBody] CreateUserTaskDto createDto, CancellationToken cancellationToken)
         {
-            var userTask = await _service.CreateUserTaskAsync(createDto, cancellationToken);
+            var userTask = await _service.CreateUserTaskAsync(createDto, UserId, cancellationToken);
 
             return CreatedAtAction(nameof(GetUserTaskById), new { id = userTask.Id }, userTask);
         }
@@ -27,7 +30,7 @@ namespace ToDoList.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserTaskById(Guid id, CancellationToken cancellationToken)
         {
-            var taskUser = await _service.GetUserTaskByIdAsync(id, cancellationToken);
+            var taskUser = await _service.GetUserTaskByIdAsync(id, UserId, cancellationToken);
 
             return Ok(taskUser);
         }
@@ -35,7 +38,7 @@ namespace ToDoList.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUserTaskAsync(Guid id, CancellationToken cancellationToken)
         {
-            var taskUser = await _service.DeleteUserTaskAsync(id, cancellationToken);
+            var taskUser = await _service.DeleteUserTaskAsync(id, UserId, cancellationToken);
 
             return NoContent();
         }
@@ -45,7 +48,7 @@ namespace ToDoList.API.Controllers
             [FromBody] UpdateUserTaskDto updateUserTaskDto,
             CancellationToken cancellationToken)
         {
-            var taskUser = await _service.UpdateUserTaskAsync(id, updateUserTaskDto, cancellationToken);
+            var taskUser = await _service.UpdateUserTaskAsync(id, updateUserTaskDto, UserId, cancellationToken);
 
             return Ok(taskUser);
         }
@@ -53,7 +56,7 @@ namespace ToDoList.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetUserTasksAsync([FromQuery] UserTaskFilter filter, [FromQuery] SortParams sortParams, [FromQuery] PageParams pageParams, CancellationToken cancellationToken)
         {
-            var tasks = await _service.GetTasksAsync(filter, sortParams, pageParams, cancellationToken);
+            var tasks = await _service.GetTasksAsync(filter, sortParams, pageParams, UserId, cancellationToken);
 
             return Ok(tasks);
         }
