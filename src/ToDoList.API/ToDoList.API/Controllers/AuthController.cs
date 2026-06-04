@@ -55,7 +55,7 @@ namespace ToDoList.API.Controllers
         }
 
         [HttpPost("refresh")]
-        public async Task<IActionResult> RefreshAsync([FromBody] RefreshTokenRequest refreshTokenRequest, CancellationToken cancellationToken)
+        public async Task<IActionResult> RefreshAsync([FromBody] RefreshTokenRequestDto refreshTokenRequest, CancellationToken cancellationToken)
         {
             var result = await _authService.RefreshToken(refreshTokenRequest.RefreshToken, cancellationToken);
 
