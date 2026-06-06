@@ -42,11 +42,6 @@ namespace ToDoList.Infrastructure.Repositories
                 .ToPagedAsync(pageParams);
         }
 
-        public async Task<UserTask?> GetUserTaskByIdAsync(Guid id, CancellationToken cancellationToken)
-        {
-            return await _tasks.FirstOrDefaultAsync(t => t.Id == id, cancellationToken);
-        }
-
         public async Task SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             await _context.SaveChangesAsync(cancellationToken);

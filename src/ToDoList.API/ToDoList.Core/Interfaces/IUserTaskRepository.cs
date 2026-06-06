@@ -6,7 +6,6 @@ namespace ToDoList.Core.Interfaces
     public interface IUserTaskRepository
     {
         Task AddUserTaskAsync(UserTask userTask, CancellationToken cancellationToken);
-        Task<UserTask?> GetUserTaskByIdAsync(Guid id, CancellationToken cancellationToken);
         Task<UserTask?> GetUserTaskByIdAndUserIdAsync(Guid id, Guid userId, CancellationToken cancellationToken);
         Task<PagedResult<UserTask>> GetAllUsersTasksAsync(UserTaskFilter filter,
             SortParams sortParams,

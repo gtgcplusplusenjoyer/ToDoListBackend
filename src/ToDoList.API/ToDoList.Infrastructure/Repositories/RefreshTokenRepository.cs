@@ -52,6 +52,11 @@ namespace ToDoList.Infrastructure.Repositories
                 token.IsRevoked = true;
             }
 
+            if (userTokens.Any())
+            {
+                await _context.SaveChangesAsync(cancellationToken);
+            }
+
         }
     }
 }
