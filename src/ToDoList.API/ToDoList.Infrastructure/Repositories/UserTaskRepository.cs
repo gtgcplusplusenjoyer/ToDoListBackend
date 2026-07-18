@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ToDoList.Core.Entities;
-using ToDoList.Core.Interfaces;
+using ToDoList.Core.Interfaces.Repositories;
 using ToDoList.Core.Models;
 using ToDoList.Infrastructure.Context;
 using ToDoList.Infrastructure.Extensions;

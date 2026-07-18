@@ -2,8 +2,8 @@
 using ToDoList.Application.Dto.User;
 using ToDoList.Application.Interfaces;
 using ToDoList.Core.Entities.User;
-using ToDoList.Core.Interfaces;
 using ToDoList.Core.Interfaces.External;
+using ToDoList.Core.Interfaces.Repositories;
 using ToDoList.Core.Tokens;
 using ToDoList.Infrastructure.Settings;
 

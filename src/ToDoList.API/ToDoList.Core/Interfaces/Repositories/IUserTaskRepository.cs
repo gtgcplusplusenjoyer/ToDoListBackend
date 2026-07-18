@@ -1,9 +1,9 @@
 ﻿using ToDoList.Core.Entities;
 using ToDoList.Core.Models;
 
-namespace ToDoList.Core.Interfaces
+namespace ToDoList.Core.Interfaces.Repositories
 {
-    public interface IUserTaskRepository
+    public interface IUserTaskRepository : IRepository<UserTask>
     {
         Task AddUserTaskAsync(UserTask userTask, CancellationToken cancellationToken);
         Task<UserTask?> GetUserTaskByIdAndUserIdAsync(Guid id, Guid userId, CancellationToken cancellationToken);
@@ -12,8 +12,5 @@ namespace ToDoList.Core.Interfaces
             PageParams pageParams,
             Guid userId,
             CancellationToken cancellationToken);
-        void Delete(UserTask userTask);
-        void Update(UserTask userTask);
-        Task SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

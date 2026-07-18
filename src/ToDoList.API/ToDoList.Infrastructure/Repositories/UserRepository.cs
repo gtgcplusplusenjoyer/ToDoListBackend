@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ToDoList.Core.Entities.User;
-using ToDoList.Core.Interfaces;
+using ToDoList.Core.Interfaces.Repositories;
 using ToDoList.Infrastructure.Context;
 
 namespace ToDoList.Infrastructure.Repositories
@@ -33,11 +33,21 @@ namespace ToDoList.Infrastructure.Repositories
         public void Update(User user)
         {
             _users.Update(user);
-        }
+        } 
 
-        public async Task<User?> GetUserById(Guid id, CancellationToken cancellationToken)
+        public async Task<User?> GetByIdAsync(Guid id, CancellationToken cancellationToken)
         {
             return await _users.FirstOrDefaultAsync(_x => _x.Id == id, cancellationToken);
+        }
+
+        public Task<List<User>> GetAllAsync(CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(User entity)
+        {
+            _users.Remove(entity);
         }
     }
 }
