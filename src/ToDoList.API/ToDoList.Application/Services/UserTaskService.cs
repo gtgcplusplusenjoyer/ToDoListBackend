@@ -29,7 +29,7 @@ namespace ToDoList.Application.Services
             task.UpdatedAt = null;
             task.UserId = userId;
 
-            await _tasks.AddUserTaskAsync(task, cancellationToken);
+            await _tasks.AddAsync(task, cancellationToken);
             await _tasks.SaveChangesAsync(cancellationToken);
 
             var response = _mapper.Map<UserTaskResponseDto>(task);

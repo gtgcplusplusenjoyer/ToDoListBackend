@@ -16,11 +16,6 @@ namespace ToDoList.Infrastructure.Repositories
             _rTokens = _context.Set<RefreshToken>();
         }
 
-        public async Task CreateAsync(RefreshToken refreshToken,CancellationToken cancellationToken)
-        {
-            await _rTokens.AddAsync(refreshToken, cancellationToken);
-        }
-
         public Task<RefreshToken?> GetByTokenAsync(string token, CancellationToken cancellationToken)
         {
             return _rTokens.FirstOrDefaultAsync(r => r.Token == token, cancellationToken);
@@ -57,6 +52,11 @@ namespace ToDoList.Infrastructure.Repositories
                 await _context.SaveChangesAsync(cancellationToken);
             }
 
+        }
+
+        public async Task AddAsync(RefreshToken refreshToken, CancellationToken cancellationToken)
+        {
+            await _rTokens.AddAsync(refreshToken, cancellationToken);
         }
     }
 }

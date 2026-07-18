@@ -40,14 +40,9 @@ namespace ToDoList.Infrastructure.Repositories
             return await _users.FirstOrDefaultAsync(_x => _x.Id == id, cancellationToken);
         }
 
-        public Task<List<User>> GetAllAsync(CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Delete(User entity)
         {
             _users.Remove(entity);
-        }
+        } 
     }
 }

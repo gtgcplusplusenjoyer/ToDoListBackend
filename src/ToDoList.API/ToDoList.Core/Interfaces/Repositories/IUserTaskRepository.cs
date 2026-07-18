@@ -1,5 +1,6 @@
 ﻿using ToDoList.Core.Entities;
 using ToDoList.Core.Models;
+using ToDoList.Core.Tokens;
 
 namespace ToDoList.Core.Interfaces.Repositories
 {
@@ -11,7 +12,6 @@ namespace ToDoList.Core.Interfaces.Repositories
             PageParams pageParams,
             Guid userId,
             CancellationToken cancellationToken);
-        void Update(UserTask userTask);
         void Delete(UserTask userTask);
     }
 }

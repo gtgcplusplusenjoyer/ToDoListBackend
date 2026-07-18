@@ -18,11 +18,6 @@ namespace ToDoList.Infrastructure.Repositories
             _tasks = _context.Set<UserTask>();
         }
 
-        public async Task AddUserTaskAsync(UserTask userTask, CancellationToken cancellationToken)
-        {
-            await _tasks.AddAsync(userTask, cancellationToken);
-        }
-
         public void Delete(UserTask userTask)
         {
             _tasks.Remove(userTask);
@@ -36,7 +31,7 @@ namespace ToDoList.Infrastructure.Repositories
         {
             return await _tasks
                 .AsNoTracking()
-                .Where(t =>t.UserId == userId)
+                .Where(t => t.UserId == userId)
                 .Filter(filter)
                 .Sort(sortParams)
                 .ToPagedAsync(pageParams);
@@ -54,7 +49,17 @@ namespace ToDoList.Infrastructure.Repositories
 
         public async Task<UserTask?> GetUserTaskByIdAndUserIdAsync(Guid id, Guid userId, CancellationToken cancellationToken)
         {
-            return await _tasks.FirstOrDefaultAsync(t=>t.Id == id && t.UserId == userId, cancellationToken);
+            return await _tasks.FirstOrDefaultAsync(t => t.Id == id && t.UserId == userId, cancellationToken);
+        }
+
+        public async Task AddAsync(UserTask userTask, CancellationToken cancellationToken)
+        {
+            await _tasks.AddAsync(userTask, cancellationToken);
+        }
+
+        public async Task<UserTask?> GetByIdAsync(Guid id, CancellationToken cancellationToken)
+        {
+            return await _tasks.FirstOrDefaultAsync(_x => _x.Id == id, cancellationToken);
         }
     }
 }
