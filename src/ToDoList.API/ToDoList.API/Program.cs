@@ -1,3 +1,4 @@
+using ToDoList.API.Extensions;
 using ToDoList.Application.Extensions;
 using ToDoList.Infrastructure.Extensions;
 using ToDoList.Infrastructure.MiddleWares;
@@ -14,13 +15,13 @@ builder.Services.AddValidation();
 
 var app = builder.Build();
 
+app.UseExceptionMiddleware();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 
